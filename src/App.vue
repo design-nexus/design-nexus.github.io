@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, nextTick, onMounted, ref } from 'vue'
 import { Command, Github, Mail } from 'lucide-vue-next'
 import Button from '@/components/ui/button/Button.vue'
 
@@ -19,7 +19,7 @@ const glyphs: Record<string, string[]> = {
 }
 
 const label = 'DESIGN-NEX.US'
-const replay = ref(0)
+const isDrawing = ref(false)
 
 const pixels = computed<Pixel[]>(() => {
   let cursor = 0
@@ -29,14 +29,25 @@ const pixels = computed<Pixel[]>(() => {
     const glyph = glyphs[character]
     const width = glyph[0].length
     glyph.forEach((row, y) => [...row].forEach((on, x) => {
-      if (on === '1') items.push({ key: `${character}-${x}-${y}-${index++}`, x: cursor + x, y, delay: index * 12 })
+      if (on === '1') items.push({ key: `${character}-${x}-${y}-${index++}`, x: cursor + x, y, delay: index * 20 })
     }))
     cursor += width + 1
   }
   return items
 })
 
-function redraw() { replay.value++ }
+function beginDrawing() {
+  // A second frame guarantees the hidden pixel state is painted before animation begins.
+  requestAnimationFrame(() => requestAnimationFrame(() => { isDrawing.value = true }))
+}
+
+async function redraw() {
+  isDrawing.value = false
+  await nextTick()
+  beginDrawing()
+}
+
+onMounted(beginDrawing)
 </script>
 
 <template>
@@ -56,8 +67,8 @@ function redraw() { replay.value++ }
     <section class="m-auto flex w-full max-w-7xl flex-col items-center px-5 text-center">
       <p class="mb-5 font-mono text-xs uppercase tracking-[0.3em] text-[#8be9fd]">Creative junction</p>
 
-      <div class="wordmark-shell" :key="replay" aria-label="Design Nex.us">
-        <i v-for="pixel in pixels" :key="pixel.key" class="pixel" :style="{ '--x': pixel.x, '--y': pixel.y, '--delay': `${pixel.delay}ms` }" />
+      <div class="wordmark-shell" aria-label="Design Nex.us">
+        <i v-for="pixel in pixels" :key="pixel.key" class="pixel" :class="{ 'is-drawing': isDrawing }" :style="{ '--x': pixel.x, '--y': pixel.y, '--delay': `${pixel.delay}ms` }" />
       </div>
 
       <div class="mt-8 flex items-center gap-3 font-mono text-xs text-[#6272a4]">
@@ -69,7 +80,7 @@ function redraw() { replay.value++ }
       <div class="mt-10 flex items-center gap-3">
         <a href="mailto:hello@design-nex.us" class="icon-link" aria-label="Email Design Nexus"><Mail class="h-4 w-4" /></a>
         <Button class="font-mono text-[0.7rem] uppercase tracking-[0.12em]" type="button" @click="redraw">redraw</Button>
-        <a href="https://github.com" class="icon-link" aria-label="GitHub"><Github class="h-4 w-4" /></a>
+        <a href="https://github.com/kensmith77" class="icon-link" aria-label="GitHub profile"><Github class="h-4 w-4" /></a>
       </div>
     </section>
 
