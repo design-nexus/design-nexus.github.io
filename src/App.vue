@@ -80,7 +80,7 @@ onMounted(beginDrawing)
       <div class="mt-10 flex items-center gap-3">
         <a href="mailto:hello@design-nex.us" class="icon-link" aria-label="Email Design Nexus"><Mail class="h-4 w-4" /></a>
         <Button class="font-mono text-[0.7rem] uppercase tracking-[0.12em]" type="button" @click="redraw">redraw</Button>
-        <a href="https://github.com/kensmith77" class="icon-link" aria-label="GitHub profile"><Github class="h-4 w-4" /></a>
+        <a href="https://github.com/design-nexus" class="icon-link" aria-label="GitHub profile"><Github class="h-4 w-4" /></a>
       </div>
     </section>
 
