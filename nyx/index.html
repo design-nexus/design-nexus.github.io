@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" data-theme="nyx-dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#09090a" />
+    <meta name="description" content="Nyx is a suite of native GTK 4 + Rust desktop apps for Omarchy. One flat, keyboard-first look that follows your theme." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://design-nex.us/nyx/" />
+    <meta property="og:title" content="Nyx Desktop Suite — design-nex.us" />
+    <meta property="og:description" content="Native GTK 4 + Rust apps for Omarchy that share one look and follow your theme." />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href="https://design-nex.us/nyx/" />
+    <title>Nyx Desktop Suite — design-nex.us</title>
+    <script>
+      (function () {
+        var themes = { 'nyx-dark': '#09090a', 'nyx-light': '#f7f7f8', 'catppuccin-mocha': '#1e1e2e', 'tokyo-night': '#1a1b26', dracula: '#282a36' }
+        try {
+          var saved = localStorage.getItem('nyx-theme')
+          if (!saved || !themes[saved]) saved = matchMedia('(prefers-color-scheme: light)').matches ? 'nyx-light' : 'nyx-dark'
+          document.documentElement.dataset.theme = saved
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', themes[saved])
+        } catch (e) {}
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/nyx/main.ts"></script>
+  </body>
+</html>

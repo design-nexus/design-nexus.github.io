@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, nextTick, onMounted, ref } from 'vue'
-import { Command, Github, Mail } from 'lucide-vue-next'
+import { ArrowRight, Command, Github, Mail } from 'lucide-vue-next'
 import Button from '@/components/ui/button/Button.vue'
 
 type Pixel = { key: string; x: number; y: number; delay: number }
@@ -61,7 +61,12 @@ onMounted(beginDrawing)
         <Command class="h-4 w-4" aria-hidden="true" />
         <span>DNX / 01</span>
       </div>
-      <p class="hidden font-mono text-[10px] uppercase tracking-[0.2em] text-[#6272a4] sm:block">Est. 2026</p>
+      <div class="flex items-center gap-5 font-mono text-[10px] uppercase tracking-[0.2em]">
+        <a href="/nyx/" class="group inline-flex items-center gap-1.5 text-[#8be9fd] transition hover:text-[#ff79c6]">
+          Nyx Desktop Suite <ArrowRight class="h-3 w-3 transition group-hover:translate-x-0.5" aria-hidden="true" />
+        </a>
+        <p class="hidden text-[#6272a4] sm:block">Est. 2026</p>
+      </div>
     </header>
 
     <section class="m-auto flex w-full max-w-7xl flex-col items-center px-5 text-center">

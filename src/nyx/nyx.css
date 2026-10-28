@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Palettes from nyx-design/crates/nyx-theme/themes; `bg` must match `themes.ts`. */
+:root, [data-theme='nyx-dark'] {
+  --nyx-bg: 9 9 10;
+  --nyx-panel: 14 14 15;
+  --nyx-card: 22 22 23;
+  --nyx-raised: 29 29 31;
+  --nyx-border: 42 42 45;
+  --nyx-text: 232 232 234;
+  --nyx-dim: 154 154 161;
+  --nyx-tertiary: 123 123 131;
+  --nyx-accent: 91 156 255;
+  --nyx-on-accent: 5 5 6;
+  --nyx-success: 70 208 138;
+  --nyx-warning: 224 166 58;
+  --nyx-danger: 255 107 107;
+  --nyx-blue: 91 156 255;
+  --nyx-violet: 157 123 255;
+  --nyx-pink: 255 111 174;
+  --nyx-red: 255 107 107;
+  --nyx-coral: 255 122 89;
+  --nyx-amber: 242 181 69;
+  --nyx-green: 70 208 138;
+  --nyx-teal: 76 201 214;
+  --nyx-glow: .26;
+  --nyx-shadow: 0 0 0;
+}
+[data-theme='nyx-light'] {
+  --nyx-bg: 247 247 248;
+  --nyx-panel: 240 240 242;
+  --nyx-card: 255 255 255;
+  --nyx-raised: 255 255 255;
+  --nyx-border: 220 220 225;
+  --nyx-text: 24 24 27;
+  --nyx-dim: 90 90 100;
+  --nyx-tertiary: 108 108 118;
+  --nyx-accent: 47 111 234;
+  --nyx-on-accent: 255 255 255;
+  --nyx-success: 31 158 92;
+  --nyx-warning: 183 121 31;
+  --nyx-danger: 217 58 58;
+  --nyx-blue: 47 111 234;
+  --nyx-violet: 111 77 224;
+  --nyx-pink: 201 58 123;
+  --nyx-red: 217 58 58;
+  --nyx-coral: 212 83 47;
+  --nyx-amber: 183 121 31;
+  --nyx-green: 31 158 92;
+  --nyx-teal: 26 143 160;
+  --nyx-glow: .14;
+  --nyx-shadow: 60 60 80;
+}
+[data-theme='catppuccin-mocha'] {
+  --nyx-bg: 30 30 46;
+  --nyx-panel: 24 24 37;
+  --nyx-card: 38 38 55;
+  --nyx-raised: 49 50 68;
+  --nyx-border: 57 58 80;
+  --nyx-text: 205 214 244;
+  --nyx-dim: 166 173 200;
+  --nyx-tertiary: 127 132 156;
+  --nyx-accent: 137 180 250;
+  --nyx-on-accent: 17 17 27;
+  --nyx-success: 166 227 161;
+  --nyx-warning: 249 226 175;
+  --nyx-danger: 243 139 168;
+  --nyx-blue: 137 180 250;
+  --nyx-violet: 203 166 247;
+  --nyx-pink: 245 194 231;
+  --nyx-red: 243 139 168;
+  --nyx-coral: 250 179 135;
+  --nyx-amber: 249 226 175;
+  --nyx-green: 166 227 161;
+  --nyx-teal: 148 226 213;
+  --nyx-glow: .22;
+  --nyx-shadow: 17 17 27;
+}
+[data-theme='tokyo-night'] {
+  --nyx-bg: 26 27 38;
+  --nyx-panel: 22 22 30;
+  --nyx-card: 31 35 53;
+  --nyx-raised: 41 46 66;
+  --nyx-border: 47 51 77;
+  --nyx-text: 192 202 245;
+  --nyx-dim: 169 177 214;
+  --nyx-tertiary: 115 122 162;
+  --nyx-accent: 122 162 247;
+  --nyx-on-accent: 22 22 30;
+  --nyx-success: 158 206 106;
+  --nyx-warning: 224 175 104;
+  --nyx-danger: 247 118 142;
+  --nyx-blue: 122 162 247;
+  --nyx-violet: 187 154 247;
+  --nyx-pink: 255 121 198;
+  --nyx-red: 247 118 142;
+  --nyx-coral: 255 158 100;
+  --nyx-amber: 224 175 104;
+  --nyx-green: 158 206 106;
+  --nyx-teal: 115 218 202;
+  --nyx-glow: .24;
+  --nyx-shadow: 15 15 20;
+}
+[data-theme='dracula'] {
+  --nyx-bg: 40 42 54;
+  --nyx-panel: 33 34 44;
+  --nyx-card: 46 48 62;
+  --nyx-raised: 52 55 70;
+  --nyx-border: 68 71 90;
+  --nyx-text: 248 248 242;
+  --nyx-dim: 191 195 220;
+  --nyx-tertiary: 135 144 192;
+  --nyx-accent: 189 147 249;
+  --nyx-on-accent: 25 26 33;
+  --nyx-success: 80 250 123;
+  --nyx-warning: 241 250 140;
+  --nyx-danger: 255 85 85;
+  --nyx-blue: 138 164 255;
+  --nyx-violet: 189 147 249;
+  --nyx-pink: 255 121 198;
+  --nyx-red: 255 85 85;
+  --nyx-coral: 255 184 108;
+  --nyx-amber: 241 250 140;
+  --nyx-green: 80 250 123;
+  --nyx-teal: 139 233 253;
+  --nyx-glow: .26;
+  --nyx-shadow: 25 26 33;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; background: rgb(var(--nyx-bg)); color: rgb(var(--nyx-text)); }
+  body { margin: 0; min-width: 320px; font-family: 'Inter', system-ui, sans-serif; font-feature-settings: 'cv11', 'ss01'; -webkit-font-smoothing: antialiased; }
+  button, a, input { font: inherit; }
+  ::selection { background: rgb(var(--nyx-accent) / .3); }
+  :focus-visible { outline: 2px solid rgb(var(--nyx-accent)); outline-offset: 2px; }
+}
+
+@layer components {
+  .nyx-grid { background-image: linear-gradient(rgb(var(--nyx-border) / .45) 1px, transparent 1px), linear-gradient(90deg, rgb(var(--nyx-border) / .45) 1px, transparent 1px); background-size: 36px 36px; mask-image: radial-gradient(ellipse at 50% 30%, black, transparent 70%); }
+  .nyx-glow { filter: blur(80px); opacity: var(--nyx-glow); pointer-events: none; }
+  .nyx-gradient { background-image: linear-gradient(90deg, rgb(var(--nyx-pink)), rgb(var(--nyx-violet)) 50%, rgb(var(--nyx-blue))); }
+  .nyx-gradient-text { @apply nyx-gradient bg-clip-text text-transparent; }
+  .nyx-eyebrow { @apply font-dm text-[11px] uppercase tracking-[0.3em] text-nyx-teal; }
+  .nyx-card { @apply rounded-[18px] border border-nyx-border/70 bg-nyx-card/70 backdrop-blur-sm; box-shadow: 0 1px 0 rgb(255 255 255 / .03) inset, 0 20px 40px -24px rgb(var(--nyx-shadow) / .5); }
+  .nyx-kbd { @apply inline-flex h-6 min-w-6 items-center justify-center rounded-md border border-nyx-border bg-nyx-raised px-1.5 font-dm text-[11px] text-nyx-dim; box-shadow: 0 1px 0 rgb(var(--nyx-border)); }
+  .nyx-btn { @apply inline-flex h-11 items-center justify-center gap-2 rounded-xl px-5 text-sm font-medium transition duration-200; }
+  .nyx-btn-primary { @apply nyx-btn bg-nyx-accent text-nyx-on-accent hover:-translate-y-0.5; box-shadow: 0 10px 30px -10px rgb(var(--nyx-accent) / .7); }
+  .nyx-btn-ghost { @apply nyx-btn border border-nyx-border bg-nyx-card/60 text-nyx-text hover:-translate-y-0.5 hover:border-nyx-accent/60; }
+  .nyx-icon-btn { @apply grid h-10 w-10 place-items-center rounded-xl border border-nyx-border/80 bg-nyx-card/60 text-nyx-dim transition hover:border-nyx-accent/60 hover:text-nyx-text; }
+}
+
+/* Pixel wordmark, the same draw-in as the landing page. */
+.nyx-wordmark { --unit: clamp(12px, 4.2vw, 34px); position: relative; width: calc(var(--unit) * var(--columns)); height: calc(var(--unit) * 7); }
+.nyx-wordmark.is-small { --unit: 3px; }
+.nyx-pixel { position: absolute; left: calc(var(--x) * var(--unit)); top: calc(var(--y) * var(--unit)); width: var(--unit); height: var(--unit); background-image: linear-gradient(90deg, rgb(var(--nyx-pink)), rgb(var(--nyx-violet)) 50%, rgb(var(--nyx-blue))); background-size: calc(var(--unit) * var(--columns)) 100%; background-position: calc(var(--x) * var(--unit) * -1) 0; box-shadow: 0 0 calc(var(--unit) * .5) rgb(var(--nyx-violet) / .35); opacity: 0; transform: scale(.15); }
+.is-small .nyx-pixel { box-shadow: none; opacity: 1; transform: none; }
+.nyx-pixel.is-drawing { animation: nyx-draw-pixel 420ms cubic-bezier(.2, .8, .3, 1) forwards; animation-delay: var(--delay); }
+@keyframes nyx-draw-pixel { to { opacity: 1; transform: scale(1); } }
+
+/* Uses `translate`, not `transform`, so Tailwind's hover lifts still compose; keep it off elements with their own transitions. */
+.nyx-reveal { opacity: 0; translate: 0 18px; transition: opacity 700ms ease, translate 700ms cubic-bezier(.2, .8, .3, 1); transition-delay: var(--reveal-delay, 0ms); }
+.nyx-reveal.is-visible { opacity: 1; translate: none; }
+
+.nyx-float { animation: nyx-float 7s ease-in-out infinite; }
+@keyframes nyx-float { 50% { transform: translateY(-10px); } }
+
+::view-transition-old(root), ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0ms !important; animation-delay: 0ms !important; transition-duration: 0ms !important; }
+  .nyx-pixel { opacity: 1; transform: none; }
+  .nyx-reveal { opacity: 1; translate: none; }
+}
