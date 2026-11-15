@@ -405,6 +405,7 @@ files = "teal"`
         <span>© 2026 design-nex.us · Nyx is MIT licensed</span>
         <span class="flex items-center gap-6">
           <a href="/" class="inline-flex items-center gap-2 transition hover:text-nyx-text"><ArrowLeft class="h-3 w-3" /> design-nex.us</a>
+          <a href="/privacy/" class="transition hover:text-nyx-text">Privacy</a>
           <a href="https://github.com/design-nexus/nyx" target="_blank" rel="noopener" class="transition hover:text-nyx-text">GitHub</a>
           <span class="text-nyx-green">● online</span>
         </span>

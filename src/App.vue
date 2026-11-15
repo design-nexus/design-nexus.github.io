@@ -90,7 +90,11 @@ onMounted(beginDrawing)
     </section>
 
     <footer class="absolute inset-x-0 bottom-0 flex justify-between p-5 font-mono text-[10px] uppercase tracking-[0.16em] text-[#6272a4] sm:p-8">
-      <span>© 2026 design-nex.us</span><span class="text-[#50fa7b]">● online</span>
+      <span class="flex items-center gap-3">
+        <span>© 2026 design-nex.us</span>
+        <a href="/privacy/" class="transition hover:text-[#8be9fd]">Privacy</a>
+      </span>
+      <span class="text-[#50fa7b]">● online</span>
     </footer>
   </main>
 </template>
