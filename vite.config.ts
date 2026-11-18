@@ -10,6 +10,8 @@ export default defineConfig({
       input: {
         main: fileURLToPath(new URL('./index.html', import.meta.url)),
         nyx: fileURLToPath(new URL('./nyx/index.html', import.meta.url)),
+        nyxos: fileURLToPath(new URL('./nyxos/index.html', import.meta.url)),
+        nyxosNocturne: fileURLToPath(new URL('./nyxos-nocturne/index.html', import.meta.url)),
         privacy: fileURLToPath(new URL('./privacy/index.html', import.meta.url)),
       },
     },
